@@ -1,0 +1,150 @@
+@mixin btn-color($backgroundColor, $fontColor) {
+  background: $backgroundColor;
+  color: $fontColor !important;
+  border: 2px solid $backgroundColor;
+
+  &:hover {
+    opacity: 0.9;
+    color: $fontColor;
+  }
+}
+
+@mixin btn-outline-color($color, $border) {
+  background: transparent;
+  border: 2px solid $border;
+  color: $color;
+
+  &:hover {
+    opacity: 0.9;
+    color: $color;
+  }
+}
+
+@mixin btn-outline-none-color($color) {
+  background: transparent;
+  border: 2px solid transparent;
+  color: $color;
+
+  &:hover {
+    opacity: 0.9;
+    color: $color;
+  }
+}
+
+.btn,
+.icon-btn {
+  outline: none;
+  background: #ffffff;
+  color: var(--text-color);
+  font-weight: 400;
+  border: 2px solid var(--border-color);
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  border-radius: var(--border-radius);
+  height: 42px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+    color: var(--text-color);
+  }
+
+  &:focus {
+    outline: 0;
+    border-color: rgba(38, 38, 38, 0.75);
+  }
+
+  &:disabled,
+  &[disabled] {
+    opacity: 0.6 !important;
+    cursor: default;
+  }
+}
+
+.btn {
+  font-size: 0.85em;
+  padding: 0 1.0em;
+}
+
+.btn.btn-sm {
+  font-size: 0.75em;
+  height: 36px;
+  padding: 0 .8em;
+}
+
+.btn.btn-lg {
+  font-size: 0.95em;
+  height: 48px;
+  padding: 0 2.5em;
+}
+
+.icon-btn {
+  font-size: 1.25em;
+  padding: 0;
+  height: 42px;
+  width: 42px;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.icon-btn.btn-sm {
+  font-size: 1em;
+  padding: 0;
+  height: 36px;
+  width: 36px;
+
+  img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.icon-btn.btn-lg {
+  font-size: 1.5em;
+  padding: 0;
+  height: 48px;
+  width: 48px;
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.btn-flat {
+  border-color: transparent;
+}
+
+.btn-width-lg {
+  width: 160px;
+  padding: 0;
+}
+
+.btn-width-md {
+  width: 128px;
+  padding: 0;
+}
+
+.btn-width-sm {
+  width: 96px;
+  padding: 0;
+}
+
+.btn-primary {
+  @include btn-color(var(--primary-color), white);
+}
+
+.btn-outline {
+  @include btn-outline-color(var(--text-color), var(--border-color));
+}
+
+.btn-primary.btn-outline {
+  @include btn-outline-color(var(--primary-color), var(--primary-color));
+}

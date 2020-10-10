@@ -1,0 +1,61 @@
+#parent {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
+
+#auth-content {
+    min-width: 375px;
+    width: 50%;
+    overflow-y: auto;
+    max-height: 100vh;
+    z-index: 3;
+    background-color: #fff;
+}
+
+#auth-background {
+    z-index: 1;
+    flex: 1;
+    height: 100%;
+    background-color: rgb(249, 249, 249);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#side-image {
+    position: absolute;
+    // top: 50%;
+    z-index: -1;
+    // left: 50%;
+    max-height: 400px;
+    width: 80%;
+    max-width: 600px;
+}
+
+#auth-form {
+    width: 100%;
+    max-width: 524px;
+}
+
+#logo {
+    height: 72px;
+    width: 72px;
+}
+
+@media only screen and (max-width: 768px) {
+    #auth-background {
+        display: none;
+    }
+
+    #auth-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #auth-form {}
+}

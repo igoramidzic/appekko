@@ -3,23 +3,34 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
-import './App.scss';
 import HomePage from './pages/home/home-page';
-import { createBrowserHistory } from "history";
-
-const history = createBrowserHistory();
+import LoginPage from './pages/login/login-page';
+import RegisterPage from './pages/register/register-page';
+import mixpanel from 'mixpanel-browser'
 
 function App() {
+
+  if (process.env["MIXPANEL_KEY"]) {
+    mixpanel.init(process.env["MIXPANEL_KEY"] || '');
+  }
+
   return (
     <Router>
-      <nav>
+      {/* <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
+          <li><Link to="/login">Login</Link></li>
+          <li><Link to="/register">Register</Link></li>
         </ul>
-      </nav>
+      </nav> */}
       <Switch>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+        <Route path="/register">
+          <RegisterPage />
+        </Route>
         <Route path="/">
           <HomePage />
         </Route>
