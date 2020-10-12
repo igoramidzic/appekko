@@ -12,7 +12,7 @@
 @mixin btn-outline-color($color, $border) {
   background: transparent;
   border: 2px solid $border;
-  color: $color;
+  color: $color !important;
 
   &:hover {
     opacity: 0.9;
