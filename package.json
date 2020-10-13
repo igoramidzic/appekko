@@ -5,9 +5,6 @@
     "scripts": {
       "heroku-postbuild": "npm run build --prefix ui-web"
     },
-    // "engines": {
-    //   "node": "6.11.1"
-    // },
     "dependencies": {
       "@types/mixpanel-browser": "^2.35.4",
       "@types/node": "^12.12.62",
