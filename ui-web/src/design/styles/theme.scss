@@ -1,0 +1,69 @@
+$primary: #3f3d54;
+$secondary: #568e74;
+$success: #4eac79;
+$danger: #FB786F;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(("primary": $primary, "success": $success, "danger": $danger), $theme-colors);
+
+:root {
+  --font-body: 'roboto', sans-serif;
+  --font-head: 'roboto', sans-serif;
+  --font-size: 17px;
+  --background: #f6f6f6;
+  --primary-color: #3f3d54;
+  --secondary-color: #568e74;
+  --success-color: #4eac79;
+  --danger-color: #FB786F;
+  --text-color: #3c3c3c;
+  --text-color-light: #b3b3b3;
+  --border-color: #e5e5e5;
+  --placeholder-color: #f4f4f4;
+  --font-weight: 400;
+  --line-height: 1.2;
+  --border-radius: 4px;
+  --hint-color: #939393;
+  --hover-color: #f9f9f9;
+  --project-color: #5297cb;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-color);
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+}
+
+hr {
+  height: 2px;
+  border-width: 0;
+  background-color: var(--border-color);
+}
+
+@media only screen and (max-width: 1199px) {
+  :root {
+    --font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  :root {
+    --font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    --font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  :root {
+    // --font-size: 14px;
+  }
+}

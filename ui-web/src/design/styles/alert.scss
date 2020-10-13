@@ -1,0 +1,21 @@
+.alert {
+  background: $light;
+  padding: 12px;
+  border-left: 8px solid darken($light, 5%);
+  font-size: 0.85em;
+}
+
+.alert-primary {
+  background: lighten($primary, 25%);
+  border-left: 8px solid $primary;
+}
+
+.alert-success {
+  background: lighten($success, 25%);
+  border-left: 8px solid $success;
+}
+
+.alert-danger {
+  background: lighten($danger, 25%);
+  border-left: 8px solid $danger;
+}

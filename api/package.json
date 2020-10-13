@@ -1,0 +1,19 @@
+{
+  "name": "appekko",
+  "version": "1.0.0",
+  "description": "API for Appekko",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igoramidzic/appekko.git"
+  },
+  "author": "Igor Amidzic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/igoramidzic/appekko/issues"
+  },
+  "homepage": "https://github.com/igoramidzic/appekko#readme"
+}
