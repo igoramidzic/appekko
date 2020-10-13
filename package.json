@@ -1,34 +1,56 @@
 {
-    "name": "appekko",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-      "heroku-postbuild": "npm run build --prefix ui-web"
-    },
-    "dependencies": {
-      "@types/mixpanel-browser": "^2.35.4",
-      "@types/node": "^12.12.62",
-      "@types/react": "^16.9.50",
-      "@types/react-dom": "^16.9.8",
-      "@types/react-router-dom": "^5.1.5",
-      "bootstrap": "^4.5.2",
-      "faker": "^5.1.0",
-      "mixpanel-browser": "^2.39.0",
-      "moment": "^2.29.1",
-      "react": "^16.13.1",
-      "react-dom": "^16.13.1",
-      "react-hook-form": "^6.9.2",
-      "react-moment": "^1.0.0",
-      "react-router-dom": "^5.2.0",
-      "react-scripts": "3.4.3",
-      "react-truncate": "^2.4.0",
-      "typescript": "^3.7.5"
-    },
-    "devDependencies": {
-      "@types/faker": "^5.1.2",
-      "@types/node-sass": "^4.11.1",
-      "@types/react-truncate": "^2.3.3",
-      "node-sass": "^4.14.1"
-    }
+  "name": "appekko",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "heroku-postbuild": "npm run build --prefix api && npm run build --prefix ui-web",
+    "start": "npm start --prefix api"
+  },
+  "dependencies": {
+    "@types/mixpanel-browser": "^2.35.4",
+    "@types/node": "^12.12.62",
+    "@types/react": "^16.9.50",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.5",
+    "bootstrap": "^4.5.2",
+    "faker": "^5.1.0",
+    "mixpanel-browser": "^2.39.0",
+    "moment": "^2.29.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^6.9.2",
+    "react-moment": "^1.0.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-truncate": "^2.4.0",
+    "typescript": "^3.7.5",
+    "async": "^3.1.0",
+    "bcrypt-nodejs": "^0.0.3",
+    "bluebird": "^3.5.5",
+    "connect-mongo": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.16.2",
+    "express-validator": "^6.2.0",
+    "fbgraph": "^1.4.4",
+    "lodash": "^4.17.19",
+    "mongoose": "^5.7.5",
+    "nodemailer": "^6.3.0",
+    "passport": "^0.4.0",
+    "passport-facebook": "^3.0.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.4",
+    "unirest": "^0.6.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/faker": "^5.1.2",
+    "@types/node-sass": "^4.11.1",
+    "@types/react-truncate": "^2.3.3",
+    "node-sass": "^4.14.1"
   }
-  
+}
