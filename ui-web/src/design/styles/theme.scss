@@ -10,7 +10,7 @@ $theme-colors: map-merge(("primary": $primary, "success": $success, "danger": $d
   --font-body: 'roboto', sans-serif;
   --font-head: 'roboto', sans-serif;
   --font-size: 17px;
-  --background: #f6f8fa;
+  --background: #f6f6f6;
   --primary-color: #3f3d54;
   --secondary-color: #568e74;
   --success-color: #4eac79;
@@ -22,7 +22,7 @@ $theme-colors: map-merge(("primary": $primary, "success": $success, "danger": $d
   --font-weight: 400;
   --line-height: 1.2;
   --border-radius: 4px;
-  --hint-color: #7e8888;
+  --hint-color: #939393;
   --hover-color: #f9f9f9;
   --project-color: #5297cb;
 }

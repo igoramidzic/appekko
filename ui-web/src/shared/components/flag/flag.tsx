@@ -11,10 +11,6 @@ export default function Flag(props: PropsWithChildren<FlagProps>) {
 
     const { type, size } = props;
 
-    const getLabel = (): string => {
-        return 'Project';
-    }
-
     const getTypeClass = (): string => {
         switch (type) {
             case EFlagTypes.Project:
@@ -48,7 +44,7 @@ export default function Flag(props: PropsWithChildren<FlagProps>) {
 
     switch (type) {
         case EFlagTypes.Project:
-            return <div className={'flag ' + getTypeClass() + ' ' + getSizeClass()}>{getTypeLabel()}</div>
+            return <div style={{ whiteSpace: 'nowrap' }} className={'flag ' + getTypeClass() + ' ' + getSizeClass()}>{getTypeLabel()}</div>
         default:
             return <span></span>;
     }

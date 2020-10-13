@@ -1,0 +1,55 @@
+.feed-header-propic-wrapper {
+    border-radius: 100%;
+    height: 48px;
+    width: 48px;
+    overflow: hidden;
+    position: relative;
+}
+
+.feed-header-propic {
+    width: 100%;
+    height: 100%;
+}
+
+.feed-header-author-name {
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.feed-header-author-description {
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--hint-color);
+}
+
+.feed-header-event-date {
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--hint-color);
+}
+
+.feed-label {
+    font-weight: 400;
+    font-size: 0.80rem;
+    margin-bottom: 2px;
+}
+
+.feed-list-item {
+    font-weight: 500;
+    font-size: 0.90rem;
+}
+
+.feed-event-title {
+    font-weight: 500;
+    font-size: 1.0rem;
+    margin-bottom: 4px;
+    display: inline-block;
+}
+
+.feed-event-content {
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
