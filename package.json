@@ -21,6 +21,7 @@
     "@types/jquery": "^3.3.31",
     "@types/lodash": "^4.14.141",
     "@types/node-sass": "^4.11.1",
+    "@types/react-truncate": "^2.3.3",
     "node-sass": "^4.14.1",
     "bootstrap": "^4.5.2",
     "faker": "^5.1.0",
