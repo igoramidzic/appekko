@@ -54,11 +54,5 @@
     "pug": "^2.0.4",
     "unirest": "^0.6.0",
     "winston": "^3.2.1"
-  },
-  "devDependencies": {
-    "@types/faker": "^5.1.2",
-    "@types/node-sass": "^4.11.1",
-    "@types/react-truncate": "^2.3.3",
-    "node-sass": "^4.14.1"
   }
 }
