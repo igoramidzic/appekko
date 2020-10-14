@@ -15,8 +15,6 @@ app.set("port", process.env.PORT || 3000);
 app.use(express_1.default.json());
 app.use(cors_1.default());
 app.use(express_1.default.static(path_1.default.join(__dirname, './../../ui-web/build')));
-// Routes
-app.use("/api", require("./api/controllers/index"));
 // Return frontend app
 app.use('**', express_1.default.static(path_1.default.join(__dirname, './../../ui-web/build')));
 exports.default = app;

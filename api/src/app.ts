@@ -13,9 +13,6 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, './../../ui-web/build')));
 
-// Routes
-app.use("/api", require("./api/controllers/index"));
-
 // Return frontend app
 app.use('**', express.static(path.join(__dirname, './../../ui-web/build')))
 
