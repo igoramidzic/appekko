@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
 import HomePage from './pages/home/home-page';
 import LoginPage from './pages/login/login-page';
 import RegisterPage from './pages/register/register-page';
 import mixpanel from 'mixpanel-browser'
+import { FirebaseContext } from './context/firebase';
+import { ROUTES } from './constants/routes';
 
 function App() {
+
+  const firebase = useContext(FirebaseContext);
 
   if (process.env["MIXPANEL_KEY"]) {
     mixpanel.init(process.env["MIXPANEL_KEY"] || '');
@@ -17,23 +22,15 @@ function App() {
 
   return (
     <Router>
-      {/* <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/register">Register</Link></li>
-        </ul>
-      </nav> */}
       <Switch>
-        <Route path="/login">
-          <LoginPage />
-        </Route>
-        <Route path="/register">
-          <RegisterPage />
-        </Route>
-        <Route path="/">
-          <HomePage />
-        </Route>
+        <Route exact path="/login" render={(props) => {
+          if (!!firebase.auth?.currentUser)
+            return <Redirect to={ROUTES.HOME}></Redirect>
+          else
+            return <LoginPage></LoginPage>
+        }}></Route>
+        <Route exact path="/register" component={RegisterPage}></Route>
+        <Route exact path="/" component={HomePage}></Route>
       </Switch>
     </Router>
   );

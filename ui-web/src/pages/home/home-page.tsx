@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ContentLayout from '../../shared/layouts/content/content-layout';
 import { IProject } from '../../core/models/project';
 import MainNavbar from '../../shared/components/navs/main-navbar';
@@ -10,8 +10,14 @@ import Feed from '../../shared/components/feed/feed';
 import { Link } from 'react-router-dom';
 import { IFeedEvent } from '../../core/models/feed';
 import { EFeedEventType } from '../../core/enums/feed';
+import { ROUTES } from '../../constants/routes';
+import { FirebaseContext } from '../../context/firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 export default function HomePage() {
+
+
+
     const technologies: ETechnology[] = [ETechnology.ANGULAR, ETechnology.DOTNET, ETechnology.MONGODB, ETechnology.NODEJS, ETechnology.REACT];
     const categories: EProjectCategory[] = [EProjectCategory.SocialNetwork, EProjectCategory.Business, EProjectCategory.ECommerce]
     const platforms: ERepositoryPlatform[] = [ERepositoryPlatform.AWS, ERepositoryPlatform.BitBucket, ERepositoryPlatform.GitLab, ERepositoryPlatform.Github]
@@ -90,13 +96,29 @@ export default function HomePage() {
 }
 
 function Profile() {
+    const firebase = useContext(FirebaseContext);
+    const [user] = useAuthState(firebase.auth);
+
+    function showLogout(): boolean {
+        console.log("testing", firebase.auth?.currentUser);
+        return !!firebase.auth?.currentUser;
+    }
+
+    function logout(): void {
+        firebase.auth.signOut();
+    }
+
     return (
         <div>
-            <Link to="/register" className="btn btn-primary btn-block">Sign up</Link>
+            <Link to={ROUTES.SIGN_UP} className="btn btn-primary btn-block">Sign up</Link>
 
             <hr />
 
-            <Link to="/login" className="btn btn-primary btn-block btn-outline">Log in</Link>
+            <Link to={ROUTES.LOG_IN} className="btn btn-primary btn-block btn-outline">Log in</Link>
+
+            <hr />
+
+            {!!user && <button className="btn btn-primary btn-block" onClick={logout}>Log Out</button>}
         </div>
     )
 }

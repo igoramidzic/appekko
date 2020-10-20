@@ -23,7 +23,7 @@ export default function FeedProject(props: IProjectProps) {
 
                 <div className="d-flex align-items-center mb-3">
                     <span className="feed-event-title"><Link to="/">{project.name}</Link></span>
-                    <div className="ml-3 mb-2">
+                    <div className="ml-3">
                         <Flag type={EFlagTypes.Project} size={EFlagSizes.Small}></Flag>
                     </div>
                 </div>

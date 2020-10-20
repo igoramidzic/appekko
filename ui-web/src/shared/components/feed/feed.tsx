@@ -15,10 +15,10 @@ export default function Feed(props: { events: IFeedEvent[] }) {
     for (let i = 0; i < events.length; i++) {
         switch (events[i].type) {
             case EFeedEventType.Project:
-                list.push(<div className="mb-3"><FeedProject project={(events[i].event as IProject)}></FeedProject></div>)
+                list.push(<div key={i} className="mb-3"><FeedProject project={(events[i].event as IProject)}></FeedProject></div>)
                 break;
             case EFeedEventType.Ad:
-                list.push(<div className="mb-3"><FeedAd ad={(events[i].event as IAd)}></FeedAd></div>)
+                list.push(<div key={i} className="mb-3"><FeedAd ad={(events[i].event as IAd)}></FeedAd></div>)
                 break;
             default:
                 break;

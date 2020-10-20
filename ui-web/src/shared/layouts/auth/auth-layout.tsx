@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from 'react'
 import './auth-layout.scss';
 import { imagePath } from '../../../helpers/assetsHelper';
 import { Link } from 'react-router-dom';
+import { ROUTES } from '../../../constants/routes';
 
 export default function AuthLayout(props: PropsWithChildren<{}>) {
     return (
@@ -12,7 +13,7 @@ export default function AuthLayout(props: PropsWithChildren<{}>) {
             <div className="d-flex align-items-center" id="auth-content">
                 <div id="auth-form" className="px-4 pb-4 px-sm-5 pb-sm-5">
                     <div className="mb-5">
-                        <Link to="/"><img id="auth-logo" src={imagePath('logo.svg')} alt="" /></Link>
+                        <Link to={ROUTES.HOME}><img id="auth-logo" src={imagePath('logo.svg')} alt="" /></Link>
                     </div>
 
                     {props.children}
