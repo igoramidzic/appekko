@@ -82,13 +82,13 @@ export default function HomePage() {
                     <div className="col-md-6">
                         <Feed events={events}></Feed>
                     </div>
-                    <div className="col-md-3">
+                    {/* <div className="col-md-3">
                         <div className="card">
                             <div className="card-body">
                                 Filter
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </ContentLayout>
@@ -110,15 +110,23 @@ function Profile() {
 
     return (
         <div>
-            <Link to={ROUTES.SIGN_UP} className="btn btn-primary btn-block">Sign up</Link>
+            {
+                !user &&
+                <div>
+                    <Link to={ROUTES.SIGN_UP} className="btn btn-primary btn-block">Sign up</Link>
 
-            <hr />
+                    <hr />
 
-            <Link to={ROUTES.LOG_IN} className="btn btn-primary btn-block btn-outline">Log in</Link>
+                    <Link to={ROUTES.LOG_IN} className="btn btn-primary btn-block btn-outline">Log in</Link>
+                </div>
+            }
 
-            <hr />
-
-            {!!user && <button className="btn btn-primary btn-block" onClick={logout}>Log Out</button>}
+            {
+                !!user &&
+                <div>
+                    <button className="btn btn-primary btn-block" onClick={logout}>Log Out</button>
+                </div>
+            }
         </div>
     )
 }
