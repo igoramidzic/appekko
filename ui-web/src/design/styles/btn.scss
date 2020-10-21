@@ -5,6 +5,7 @@
 
   &:hover {
     opacity: 0.9;
+    background-color: $backgroundColor;
     color: $fontColor;
   }
 }
@@ -49,6 +50,7 @@
   cursor: pointer;
 
   &:hover {
+    background-color: var(--border-color);
     opacity: 0.9;
     color: var(--text-color);
   }
@@ -84,6 +86,10 @@
 
 .btn.btn-block {
   width: 100%;
+}
+
+.btn.btn-align-left {
+  justify-content: start;
 }
 
 .icon-btn {

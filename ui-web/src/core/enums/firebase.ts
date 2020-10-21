@@ -5,5 +5,6 @@ export enum EFirebaseAuthErrorCode {
     INVALID_PASSWORD = 'auth/invalid-password',
     INVALID_PHONE_NUMBER = 'auth/invalid-phone-number',
     INVALID_PHOTO_URL = 'auth/invalid-photo-url',
-    WRONG_PASSWORD = 'auth/wrong-password'
+    WRONG_PASSWORD = 'auth/wrong-password',
+    POPUP_CLOSED_BY_USER = 'auth/popup-closed-by-user'
 }
