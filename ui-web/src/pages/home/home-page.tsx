@@ -14,7 +14,7 @@ import { ROUTES } from '../../constants/routes';
 import { FirebaseContext } from '../../context/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
-export default async function HomePage() {
+export default function HomePage() {
     const technologies: ETechnology[] = [ETechnology.ANGULAR, ETechnology.DOTNET, ETechnology.MONGODB, ETechnology.NODEJS, ETechnology.REACT];
     const categories: EProjectCategory[] = [EProjectCategory.SocialNetwork, EProjectCategory.Business, EProjectCategory.ECommerce]
     const platforms: ERepositoryPlatform[] = [ERepositoryPlatform.AWS, ERepositoryPlatform.BitBucket, ERepositoryPlatform.GitLab, ERepositoryPlatform.Github]
@@ -25,7 +25,7 @@ export default async function HomePage() {
     const events: IFeedEvent[] = [];
     let projects: IProject[] = [];
 
-    const projectsSnapshot = await f.firestore.collection('projects').get();
+    // const projectsSnapshot = await f.firestore.collection('projects').get();
 
     // projectsSnapshot.docs.forEach(doc => {
     //     const data = doc.data();
