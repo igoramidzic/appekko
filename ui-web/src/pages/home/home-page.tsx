@@ -14,56 +14,58 @@ import { ROUTES } from '../../constants/routes';
 import { FirebaseContext } from '../../context/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
-export default function HomePage() {
-
-
-
+export default async function HomePage() {
     const technologies: ETechnology[] = [ETechnology.ANGULAR, ETechnology.DOTNET, ETechnology.MONGODB, ETechnology.NODEJS, ETechnology.REACT];
     const categories: EProjectCategory[] = [EProjectCategory.SocialNetwork, EProjectCategory.Business, EProjectCategory.ECommerce]
     const platforms: ERepositoryPlatform[] = [ERepositoryPlatform.AWS, ERepositoryPlatform.BitBucket, ERepositoryPlatform.GitLab, ERepositoryPlatform.Github]
 
+    const f = useContext(FirebaseContext);
+
+
     const events: IFeedEvent[] = [];
-    const projects: IProject[] = [];
+    let projects: IProject[] = [];
 
-    for (let i = 0; i < 10; i++) {
-        let randomNum: number = faker.random.number({ min: 0, max: 10 });
+    const projectsSnapshot = await f.firestore.collection('projects').get();
 
-        if (randomNum > 3)
-            events.push({
-                type: EFeedEventType.Project,
-                event: {
-                    name: faker.company.catchPhrase(),
-                    description: faker.commerce.productDescription() + " " + faker.commerce.productDescription() + faker.commerce.productDescription() + faker.commerce.productDescription(),
-                    owner: {
-                        fullName: faker.name.findName(),
-                        profilepicUrl: faker.internet.avatar(),
-                        school: 'USF ⋅ Senior'
-                    },
-                    repository: {
-                        platform: faker.random.arrayElement(platforms),
-                        url: 'https://github.com/' + faker.internet.userName() + '/' + faker.company.bsBuzz()
-                    },
-                    startDate: faker.date.recent(2),
-                    technologies: [faker.random.arrayElement(technologies), faker.random.arrayElement(technologies), faker.random.arrayElement(technologies)],
-                    category: faker.random.arrayElement(categories)
-                }
-            })
-        else
-            events.push({
-                type: EFeedEventType.Ad,
-                event: {
-                    name: faker.company.catchPhrase(),
-                    description: faker.commerce.productDescription() + " " + faker.commerce.productDescription() + faker.commerce.productDescription() + faker.commerce.productDescription(),
-                    owner: {
-                        fullName: faker.name.findName(),
-                        profilepicUrl: faker.internet.avatar(),
-                        school: 'USF ⋅ Senior'
-                    },
-                }
-            })
-    }
+    // projectsSnapshot.docs.forEach(doc => {
+    //     const data = doc.data();
+    //     projects.push({
+    //         name: data.name,
+    //         description: data.description,
+    //         owner: data.author,
+    //         repository: {
+    //             platform: ERepositoryPlatform.Github,
+    //             url: data.repository.url
+    //         },
+    //         startDate: data.created,
+    //         technologies: data.technologies,
+    //         category: data.category
+    //     });
+    // })
 
-    projects.sort((a, b) => a.startDate < b.startDate ? 1 : -1);
+    // for (let i = 0; i < 10; i++) {
+    //     events.push({
+    //         type: EFeedEventType.Project,
+    //         event: {
+    //             name: faker.company.catchPhrase(),
+    //             description: faker.commerce.productDescription() + " " + faker.commerce.productDescription() + faker.commerce.productDescription() + faker.commerce.productDescription(),
+    //             owner: {
+    //                 fullName: faker.name.findName(),
+    //                 profilepicUrl: faker.image.cats(),
+    //                 school: 'USF ⋅ Senior'
+    //             },
+    //             repository: {
+    //                 platform: faker.random.arrayElement(platforms),
+    //                 url: 'https://github.com/' + faker.internet.userName() + '/' + faker.company.bsBuzz()
+    //             },
+    //             startDate: faker.date.recent(2),
+    //             technologies: [faker.random.arrayElement(technologies), faker.random.arrayElement(technologies), faker.random.arrayElement(technologies)],
+    //             category: faker.random.arrayElement(categories)
+    //         }
+    //     })
+    // }
+
+    // projects.sort((a, b) => a.startDate < b.startDate ? 1 : -1);
 
     return (
         <ContentLayout>

@@ -13,7 +13,7 @@ type RegisterFormData = {
 };
 
 export default function RegisterForm() {
-    const firebase = useContext(FirebaseContext);
+    const f = useContext(FirebaseContext);
     const history = useHistory();
 
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -26,9 +26,10 @@ export default function RegisterForm() {
         setErrorMessage(null);
 
         try {
-            let res = await firebase.auth?.createUserWithEmailAndPassword(data.email, data.password);
+            let res = await f.auth?.createUserWithEmailAndPassword(data.email, data.password);
             if (!res.user) throw Error("Something went wrong.");
             await res.user.updateProfile({ displayName: data.fullName });
+            await f.firestore.collection('users').doc(res.user.uid).set({ fullName: data.fullName });
             history.push(ROUTES.HOME);
         } catch (e) {
             setErrorMessage(getRegisterErrorMessage(e.code));
