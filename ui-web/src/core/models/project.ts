@@ -15,7 +15,7 @@ export interface IProject {
 export interface IAuthor {
     fullName: string;
     profilepicUrl: string;
-    school: string;
+    school?: string;
 }
 
 export interface IRepository {

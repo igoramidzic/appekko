@@ -1,20 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { imagePath } from '../../../helpers/assetsHelper'
 import './main-navbar.scss';
 import AppStatus from '../app-status/app-status';
-import { FirebaseContext } from '../../../context/firebase';
 import { ROUTES } from '../../../constants/routes';
 
 export default function MainNavbar() {
-    const firebase = useContext(FirebaseContext);
-
-    function click() {
-        firebase.auth?.createUserWithEmailAndPassword('', '')
-            .then((res) => console.log(res))
-            .catch(e => console.log(e));
-    }
-
     return (
         <nav className="py-2 d-flex align-items-center justify-content-between">
             <div>

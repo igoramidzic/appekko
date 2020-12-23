@@ -24,7 +24,7 @@ export default function FeedProjectStats(props: { project: IProject }) {
             </div>
             <div className="d-flex flex-column">
                 <span className="feed-label">Repository</span>
-                <span className="feed-list-item"><a href={repository.url} target="_blank">{getRepositoryPlatform(repository.platform)}</a></span>
+                <span className="feed-list-item"><a href={repository.url} target="_blank" rel="noopener noreferrer">{getRepositoryPlatform(repository.platform)}</a></span>
             </div>
         </div>
     )

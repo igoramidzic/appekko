@@ -14,7 +14,7 @@ export default function FeedEventContent(props: { text: string }) {
     return (
         <p className="feed-event-content">
             <Truncate lines={!expanded && 2} ellipsis={(
-                <span>... <a style={{ fontWeight: 500, fontSize: '0.9rem' }} href='#' onClick={toggleLines}>Show More</a></span>
+                <span>... <a style={{ fontWeight: 500, fontSize: '0.9rem' }} href="#" onClick={toggleLines}>Show More</a></span>
             )}>
                 {text}
             </Truncate>

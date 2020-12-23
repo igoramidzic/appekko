@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import GoogleAuth from '../../shared/components/auth/google-auth/google-auth'
 import LoginForm from '../../shared/components/auth/login-form/login-form'
 import AuthLayout from '../../shared/layouts/auth/auth-layout'

@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react'
+import React, { useContext } from 'react'
 import AuthLayout from '../../shared/layouts/auth/auth-layout';
 import RegisterForm from '../../shared/components/auth/register-form/register-form';
 import GoogleAuth from '../../shared/components/auth/google-auth/google-auth';
