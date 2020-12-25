@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-body">
+        <app-project-header [author]="project.author" [created]="project.created.toDate()"></app-project-header>
+
+        <hr class="my-2" />
+
+        <div class="d-flex align-items-center mb-3">
+            <span class="feed-event-title"><a class="text-color" [routerLink]="">{{project.name}}</a></span>
+            <div class="ml-3">
+                <app-flag [type]="EFlagTypes.Project" [size]="EFlagSizes.Small"></app-flag>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <app-project-stats [category]="project.category" [technologies]="project.technologies" [repository]="project.repository"></app-project-stats>
+        </div>
+
+        <app-project-content [description]="project.description"></app-project-content>
+    </div>
+</div>

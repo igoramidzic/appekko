@@ -1,0 +1,16 @@
+<div id="parent">
+    <div id="auth-background">
+        <img id="side-image" [src]="ImagePath('project_team.svg')" alt="" />
+    </div>
+    <div class="d-flex align-items-center" id="auth-content">
+        <div id="auth-form" class="px-4 pb-4 px-sm-5 pb-sm-5">
+            <div class="mb-5">
+                <a [routerLink]="[PAGE_ROUTES_CONSTANTS.FEED]">
+                    <img id="auth-logo" [src]="ImagePath('logo.svg')" alt="" />
+                </a>
+            </div>
+
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

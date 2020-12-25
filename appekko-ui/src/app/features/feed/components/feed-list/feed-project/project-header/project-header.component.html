@@ -1,0 +1,19 @@
+<div class="d-flex align-items-start justify-content-between">
+    <div class="d-flex align-items-start">
+        <div class="feed-header-propic-wrapper mr-3">
+            <a [routerLink]="[]">
+                <img class="feed-header-propic" [src]="author.photoURL" alt="" />
+            </a>
+        </div>
+
+        <div class="d-flex flex-column pt-1">
+            <span class="feed-header-author-name">
+                <a [routerLink]="[]" class="text-color">{{author.displayName}}</a></span>
+            <span class="feed-header-author-description">USF</span>
+        </div>
+
+    </div>
+    <span class="feed-header-event-date">
+        {{ created | amTimeAgo }}
+    </span>
+</div>

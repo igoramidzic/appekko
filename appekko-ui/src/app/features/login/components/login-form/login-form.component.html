@@ -1,0 +1,20 @@
+<form (ngSubmit)="onFormSubmit()" [formGroup]="form">
+    <div class="mb-4">
+        <label htmlFor="email">Email</label>
+        <input name="email" autofocus type="text" class="input-lg" formControlName="email" />
+    </div>
+
+    <div class="mb-5">
+        <label htmlFor="password">Password</label>
+        <input name="password" type="password" class="input-lg" formControlName="password" />
+    </div>
+
+    <div class="mb-4 alert alert-danger" *ngIf="!!hasError">{{ errorMessage }}</div>
+
+    <button type="submit" [disabled]="form.disabled" class="btn btn-primary btn-lg btn-block mb-3">
+        <span *ngIf="!form.disabled">Log in</span>
+        <span *ngIf="!!form.disabled">Loggin in ...</span>
+    </button>
+
+    <p class="mb-0">Don't have an account? <a [routerLink]="['/' + PAGE_ROUTES_CONSTANTS.REGISTER]">Sign up</a></p>
+</form>

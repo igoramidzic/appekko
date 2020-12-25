@@ -1,0 +1,18 @@
+<div class="py-4 row">
+    <div class="col-md-3">
+        <app-profile *ngIf="auth.user; else profileUnauthed"></app-profile>
+        <ng-template #profileUnauthed>
+            <app-profile-unauthenticated></app-profile-unauthenticated>
+        </ng-template>
+    </div>
+    <div class="col-md-6">
+        <app-feed-list></app-feed-list>
+    </div>
+    <div class="col-md-3">
+        <!-- <div class="card">
+            <div class="card-body">
+                Filter
+            </div>
+        </div> -->
+    </div>
+</div>

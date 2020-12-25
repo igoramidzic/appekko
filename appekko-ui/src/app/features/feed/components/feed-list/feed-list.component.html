@@ -1,0 +1,14 @@
+<div *ngFor="let item of feed">
+    <div [ngSwitch]="item.type" class="mb-3">
+        <div *ngSwitchCase="EFeedEventType.Project">
+            <app-feed-project [project]="item.event" [project]="item.event"></app-feed-project>
+        </div>
+        <div *ngSwitchDefault>
+
+        </div>
+    </div>
+</div>
+
+<app-fetching-feed *ngIf="fetchingFeed"></app-fetching-feed>
+<app-error-feed *ngIf="errorFetchingFeed"></app-error-feed>
+<app-empty-feed *ngIf="!fetchingFeed && feed?.length == 0"></app-empty-feed>

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { AuthService } from './core/services/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: []
 })
 export class AppComponent {
-  title = 'appekko-ui';
+  constructor(public auth: AuthService) { }
 }

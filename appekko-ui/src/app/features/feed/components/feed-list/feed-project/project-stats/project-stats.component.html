@@ -1,0 +1,18 @@
+<div class="d-flex">
+    <div class="d-flex flex-column mr-5">
+        <span class="feed-label">Category</span>
+        <span class="feed-list-item">{{getProjectCategory(category)}}</span>
+    </div>
+    <div class="d-flex flex-column mr-5">
+        <span class="feed-label">Technologies</span>
+        <span class="feed-list-item">{{getTechnologiesString(technologies)}}</span>
+    </div>
+    <div class="d-flex flex-column">
+        <span class="feed-label">Repository</span>
+        <span class="feed-list-item">
+            <a class="text-color" [href]="repository.url" target="_blank" rel="noopener noreferrer">
+                {{getRepositoryPlatform(repository.platform)}}
+            </a>
+        </span>
+    </div>
+</div>

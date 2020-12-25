@@ -1,0 +1,39 @@
+input[type=text],
+input[type=email],
+input[type=password] {
+    background-color: #fff;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    width: 100%;
+    line-height: 2;
+
+    height: 42px;
+    padding: 0 16px;
+
+    font-size: 0.9em;
+
+    &:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+
+    &:disabled {
+        background-color: var(--border-color);
+        border-color: var(--border-color);
+    }
+
+    &::placeholder {
+        color: var(--hint-color);
+    }
+
+    &.input-lg {
+        height: 48px;
+        font-size: 1em;
+    }
+
+    &.input-sm {
+        height: 36px;
+
+        font-size: 0.85em;
+    }
+}
