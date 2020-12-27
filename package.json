@@ -7,11 +7,10 @@
     "start": "npm start --prefix api"
   },
   "dependencies": {
-    "@types/mixpanel-browser": "^2.35.4",
+    "@angular-devkit/build-angular": "~0.1100.5",
+    "@angular/cli": "~11.0.5",
+    "@angular/compiler-cli": "~11.0.5",
     "@types/node": "^12.12.62",
-    "@types/react": "^16.9.50",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-router-dom": "^5.1.5",
     "@types/async": "^3.0.2",
     "@types/cors": "^2.8.6",
     "@types/errorhandler": "^0.0.32",
@@ -21,19 +20,11 @@
     "@types/jquery": "^3.3.31",
     "@types/lodash": "^4.14.141",
     "@types/node-sass": "^4.11.1",
-    "@types/react-truncate": "^2.3.3",
     "node-sass": "^4.14.1",
     "bootstrap": "^4.5.2",
     "faker": "^5.1.0",
     "mixpanel-browser": "^2.39.0",
     "moment": "^2.29.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-hook-form": "^6.9.2",
-    "react-moment": "^1.0.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
-    "react-truncate": "^2.4.0",
     "typescript": "^3.7.5",
     "async": "^3.1.0",
     "bcrypt-nodejs": "^0.0.3",
@@ -58,8 +49,6 @@
     "unirest": "^0.6.0",
     "winston": "^3.2.1",
     "firebase": "^7.24.0",
-    "firebase-react-hooks": "^0.6.1",
-    "react-firebase-hooks": "^2.2.0",
     "@types/firebase": "^3.2.1"
   }
 }
