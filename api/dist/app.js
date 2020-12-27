@@ -14,8 +14,8 @@ const app = express_1.default();
 app.set("port", process.env.PORT || 3000);
 app.use(express_1.default.json());
 app.use(cors_1.default());
-app.use(express_1.default.static(path_1.default.join(__dirname, './../../ui-web/build')));
+app.use(express_1.default.static(path_1.default.join(__dirname, './../../appekko-ui/dist/appekko-ui')));
 // Return frontend app
-app.use('**', express_1.default.static(path_1.default.join(__dirname, './../../ui-web/build')));
+app.use('**', express_1.default.static(path_1.default.join(__dirname, './../../appekko-ui/dist/appekko-ui')));
 exports.default = app;
 //# sourceMappingURL=app.js.map
