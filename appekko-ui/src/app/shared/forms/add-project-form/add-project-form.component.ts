@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { EFirebaseAuthErrorCode } from 'src/app/core/constants/firebase';
 import { ERepositoryPlatform } from 'src/app/core/enums/repositoryPlatforms';
 import { IProject } from 'src/app/core/models/project.model';
-import { serverTimestamp } from 'src/app/core/utils/timestamp';
+// import { serverTimestamp } from 'src/app/core/utils/timestamp';
 
 @Component({
   selector: 'app-add-project-form',
@@ -57,8 +57,8 @@ export class AddProjectFormComponent implements OnInit {
         email: 'amidzicigor46@gmail.com',
         displayName: 'Igor Amidzic',
       },
-      created: serverTimestamp(),
-      updated: serverTimestamp()
+      created: new Date(),
+      updated: new Date()
     }
 
     try {

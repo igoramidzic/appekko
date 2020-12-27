@@ -18,12 +18,12 @@ export class FeedService {
 
     for (let i = 0; i < res.docs.length; i++) {
       let doc = res.docs[i];
-      let data = doc.data();
+      let data = <any>doc.data();
       let author = <IUser>(await (<any>data).author.get()).data();
 
       feed.push({
         type: EFeedEventType.Project,
-        event: { ...<IProject>data, author: author }
+        event: { ...<IProject>data, author: author, created: data.created.toDate(), updated: data.updated.toDate() }
       })
     }
 
