@@ -10,8 +10,8 @@ export interface IProject {
     repository: IRepository;
     technologies: ETechnology[];
     category: EProjectCategory;
-    // created: firebase.default.firestore.Timestamp;
-    // updated: firebase.default.firestore.Timestamp;
+    created: firebase.default.firestore.Timestamp;
+    updated: firebase.default.firestore.Timestamp;
 }
 
 export interface IRepository {
