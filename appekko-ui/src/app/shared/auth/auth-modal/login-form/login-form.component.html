@@ -1,0 +1,26 @@
+<h3 class="mb-4">Log in</h3>
+
+<app-google-auth-button (beginningAuthentication)="onBeginningGoogleAuthentication()" (successfulAuthenticated)="onSuccessfulGoogleAuthenticated()"></app-google-auth-button>
+
+<hr class="my-4" />
+
+<form (ngSubmit)="onFormSubmit()" [formGroup]="form">
+    <div class="mb-4">
+        <label htmlFor="email">Email</label>
+        <input name="email" autofocus type="text" class="input-lg" formControlName="email" />
+    </div>
+
+    <div class="mb-5">
+        <label htmlFor="password">Password</label>
+        <input name="password" type="password" class="input-lg" formControlName="password" />
+    </div>
+
+    <div class="mb-4 alert alert-danger" *ngIf="!!hasError">{{ errorMessage }}</div>
+
+    <button type="submit" [disabled]="form.disabled" class="btn btn-primary btn-lg btn-block">
+        <span *ngIf="!form.disabled">Log in</span>
+        <span *ngIf="!!form.disabled">Loggin in ...</span>
+    </button>
+
+    <p class="mb-0 mt-3" *ngIf="showLinkToRegister">Don't have an account? <button class="link" (click)="onGoToRegisterForm()">Sign up</button></p>
+</form>

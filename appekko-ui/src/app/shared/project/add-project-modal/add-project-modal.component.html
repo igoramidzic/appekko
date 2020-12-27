@@ -1,0 +1,6 @@
+<app-add-project-form *ngIf="!project" (successfulCreateProject)="onSuccessfulCreateProject($event)"></app-add-project-form>
+
+<div *ngIf="project" class="d-flex flex-column align-items-center">
+    <h2 class="primary">Successful!</h2>
+    <p class="mb-0">Haven't gotten far enough to save to DB.</p>
+</div>

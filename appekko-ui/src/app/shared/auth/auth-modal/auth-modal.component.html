@@ -1,0 +1,7 @@
+<div [ngSwitch]="data.currentForm">
+    <app-login-form *ngSwitchCase="EAuthFormToDisplay.Login" (switchForm)="onSwitchForm($event)" (successfulAuthentication)="onSuccessfulAuthentication()" [showLinkToRegister]="!data.preventSwitchingForms"></app-login-form>
+    <app-register-form *ngSwitchCase="EAuthFormToDisplay.Register" (switchForm)="onSwitchForm($event)" (successfulAuthentication)="onSuccessfulAuthentication()" [showLinkToLogin]="!data.preventSwitchingForms"></app-register-form>
+    <p *ngSwitchDefault>
+        Something went wrong.
+    </p>
+</div>

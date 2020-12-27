@@ -1,0 +1,40 @@
+<h3 class="mb-4">Create a Project</h3>
+
+<form (submit)="onFormSubmit()" [formGroup]="form" #myForm="ngForm">
+    <div class="mb-4">
+        <label htmlFor="name">Project Name</label>
+        <input name="name" autofocus type="text" class="input-lg" formControlName="name" />
+        <span class="hint danger" *ngIf="myForm.submitted && showProjectNameError">Project name is required</span>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-sm-6">
+            <label htmlFor="category">Category</label>
+            <input name="category" type="text" class="input-lg" formControlName="category" />
+            <span class="hint danger" *ngIf="myForm.submitted && showCategoryError">Category is required</span>
+        </div>
+        <div class="col-sm-6">
+            <label htmlFor="technologies">Technologies</label>
+            <input name="technologies" type="text" class="input-lg" formControlName="technologies" />
+            <span class="hint danger" *ngIf="myForm.submitted && showTechnologiesError">Technologies is required</span>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <label htmlFor="repositoryURL">Repository URL</label>
+        <input name="repositoryURL" type="text" class="input-lg" formControlName="repositoryURL" />
+        <span class="hint danger" *ngIf="myForm.submitted && showRepositoryURLError">Repository URL is required</span>
+    </div>
+
+    <div class="mb-5">
+        <label htmlFor="description">Description</label>
+        <textarea name="description" rows="4" type="text" class="input-lg" formControlName="description"></textarea>
+    </div>
+
+    <div class="alert alert-danger mb-4" *ngIf="hasError">{{errorMessage}}</div>
+
+    <button type="submit" [disabled]="form.disabled" class="btn btn-primary btn-lg btn-block">
+        <span *ngIf="!form.disabled">Create Project</span>
+        <span *ngIf="!!form.disabled">Creating Project...</span>
+    </button>
+</form>

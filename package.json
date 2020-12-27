@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "heroku-postbuild": "npm run build --prefix api && npm run build --prefix ui-web",
+    "heroku-postbuild": "npm run build --prefix api && npm run build --prod --prefix appekko-ui",
     "start": "npm start --prefix api"
   },
   "dependencies": {

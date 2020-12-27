@@ -1,3 +1,7 @@
+.wrapper {
+    background-color: #fff;
+}
+
 #parent {
     display: flex;
     height: 100vh;
@@ -5,18 +9,16 @@
 }
 
 #auth-content-wrapper {
-    background-color: #fff;
     height: 100%;
 }
 
 #auth-content {
+    display: flex;
     min-width: 375px;
     width: 50%;
     overflow-y: auto;
     max-height: 100vh;
-    z-index: 3;
     background-color: #fff;
-    height: 100%;
 }
 
 #auth-background {
@@ -28,6 +30,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    background-color: var(--background);
 }
 
 #side-image {
@@ -46,8 +49,8 @@
 }
 
 #auth-logo {
-    height: 72px;
-    width: 72px;
+    height: 64px;
+    width: 64px;
 }
 
 @media only screen and (max-width: 768px) {

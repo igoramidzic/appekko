@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore'
 import firebase from 'firebase/app';
@@ -31,6 +30,10 @@ export class AuthService {
         tap(() => { resolve(true); console.log("Hasdf") })
       )
     })
+  }
+
+  get isAuthenticated(): boolean {
+    return !!this.user;
   }
 
   private async getUserData(user: firebase.User | null): Promise<void> {

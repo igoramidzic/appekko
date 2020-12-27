@@ -15,6 +15,7 @@ import { FetchingFeedComponent } from './components/feed-list/fetching-feed/fetc
 import { ProjectHeaderComponent } from './components/feed-list/feed-project/project-header/project-header.component';
 import { ProjectStatsComponent } from './components/feed-list/feed-project/project-stats/project-stats.component';
 import { ProjectContentComponent } from './components/feed-list/feed-project/project-content/project-content.component';
+import { NewFeedEventFormComponent } from './components/new-feed-event-form/new-feed-event-form.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { ProjectContentComponent } from './components/feed-list/feed-project/pro
         FetchingFeedComponent,
         ProjectHeaderComponent,
         ProjectStatsComponent,
-        ProjectContentComponent
+        ProjectContentComponent,
+        NewFeedEventFormComponent
     ],
     imports: [
         CommonModule,

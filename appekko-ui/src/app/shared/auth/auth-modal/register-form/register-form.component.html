@@ -1,0 +1,36 @@
+<h3 class="mb-4">Sign up</h3>
+
+<app-google-auth-button (beginningAuthentication)="onBeginningGoogleAuthentication()" (successfulAuthenticated)="onSuccessfulGoogleAuthenticated()"></app-google-auth-button>
+
+<hr class="my-4" />
+
+<form (submit)="onFormSubmit()" [formGroup]="form" #myForm="ngForm" class="form-width">
+    <div class="mb-4">
+        <label htmlFor="fullName">Full Name</label>
+        <input name="fullName" autofocus type="text" class="input-lg" formControlName="fullName" />
+        <span class="hint danger" *ngIf="myForm.submitted && showFullNameError">Full name is required</span>
+    </div>
+
+    <div class="mb-4">
+        <label htmlFor="email">Email</label>
+        <input name="email" type="email" class="input-lg" formControlName="email" />
+        <span class="hint danger" *ngIf="myForm.submitted && showEmailError">Email is required</span>
+    </div>
+
+    <div class="mb-5">
+        <label htmlFor="password">Password</label>
+        <input name="password" type="password" class="input-lg" formControlName="password" />
+        <span class="hint" [ngClass]="{ 'danger': myForm.submitted && showPasswordError }">8+ characters, 1 number, 1 special character</span>
+    </div>
+
+    <div class="alert alert-danger mb-4" *ngIf="hasError">{{errorMessage}}</div>
+
+    <button type="submit" [disabled]="form.disabled" class="btn btn-primary btn-lg btn-block">
+        <span *ngIf="!form.disabled">Sign up</span>
+        <span *ngIf="!!form.disabled">Signing up...</span>
+    </button>
+
+    <p class="mb-0 mt-3" *ngIf="showLinkToLogin">Already have an account?
+        <button class="link" (click)="onGoToLoginForm()">Log in</button>
+    </p>
+</form>

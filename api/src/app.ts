@@ -11,9 +11,9 @@ const app = express();
 app.set("port", process.env.PORT || 3000);
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, './../../ui-web/build')));
+app.use(express.static(path.join(__dirname, './../../appekko-ui/dist/appekko-ui')));
 
 // Return frontend app
-app.use('**', express.static(path.join(__dirname, './../../ui-web/build')))
+app.use('**', express.static(path.join(__dirname, './../../appekko-ui/dist/appekko-ui')))
 
 export default app;
