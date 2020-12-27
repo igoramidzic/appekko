@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { EFlagSizes, EFlagTypes } from 'src/app/core/enums/flags';
 import { IProject } from '../../../../../core/models/project.model';
-import { EFlagTypes, EFlagSizes } from '../../../../../../../../ui-web/src/core/enums/flags';
 
 @Component({
   selector: 'app-feed-project',

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { EFlagTypes } from 'src/app/core/enums/flags';
-import { EFlagSizes } from '../../../../../ui-web/src/core/enums/flags';
+import { EFlagSizes, EFlagTypes } from 'src/app/core/enums/flags';
 
 @Component({
   selector: 'app-flag',
