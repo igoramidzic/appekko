@@ -19,6 +19,6 @@ export class RegisterPageComponent implements OnInit {
   }
 
   onSuccessfulAuthentication(): void {
-    this.router.navigate([PAGE_ROUTES_CONSTANTS.FEED]);
+    this.router.navigate([PAGE_ROUTES_CONSTANTS.DASHBOARD]);
   }
 }

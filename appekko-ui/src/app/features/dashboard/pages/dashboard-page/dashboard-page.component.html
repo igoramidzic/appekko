@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <div class="content-width container-fluid p-5">
+        <div class="header">
+            <h1>Search for a Project</h1>
+            <p>Find projects that interests you.</p>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div class="screener-wrapper">
+                <app-screener (repos)="onNewRepos($event)"></app-screener>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="content-width container-fluid pt-5">
+    <div class="card mb-3" *ngFor="let repo of repos">
+        <div class="card-body">
+            <img [src]="repo.owner.avatar_url" alt="" style="height: 32px; width: 32px">
+            <h3 class="mb-0">{{ repo.name }}</h3>
+            <p class="mb-0">{{ repo.description }}</p>
+            <p class="mb-0">{{ repo.language }}</p>
+            <a [href]="repo.html_url" target="_blank" class="mb-0">{{ repo.html_url }}</a>
+        </div>
+    </div>
+</div>

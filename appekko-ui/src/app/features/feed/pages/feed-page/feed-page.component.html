@@ -1,5 +1,5 @@
 <div class="py-4 row">
-    <div class="col-md-3">
+    <div class="col-md-3 mb-3">
         <app-profile *ngIf="auth.user; else profileUnauthed"></app-profile>
         <ng-template #profileUnauthed>
             <app-profile-unauthenticated></app-profile-unauthenticated>

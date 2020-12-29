@@ -172,10 +172,18 @@ button.link.link-sm {
     @include btn-color(var(--primary-color), white);
 }
 
+.btn-secondary {
+    @include btn-color(var(--secondary-color), white);
+}
+
 .btn-outline {
     @include btn-outline-color(var(--text-color), var(--border-color));
 }
 
 .btn-primary.btn-outline {
     @include btn-outline-color(var(--primary-color), var(--primary-color));
+}
+
+.btn-secondary.btn-outline {
+    @include btn-outline-color(var(--secondary-color), var(--secondary-color));
 }

@@ -13,6 +13,7 @@ import { AppLoaderComponent } from './core/components/app-loader/app-loader.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const firebaseConfig = {
@@ -27,7 +28,7 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    AppLoaderComponent,
+    AppLoaderComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +41,8 @@ const firebaseConfig = {
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

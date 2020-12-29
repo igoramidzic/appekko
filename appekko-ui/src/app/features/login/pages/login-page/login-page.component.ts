@@ -18,7 +18,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSuccessfulAuthenticated(): void {
-    this.router.navigate([PAGE_ROUTES_CONSTANTS.FEED]);
+    this.router.navigate([PAGE_ROUTES_CONSTANTS.DASHBOARD]);
   }
 
 }

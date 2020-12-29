@@ -4,10 +4,14 @@ import { PAGE_ROUTES_CONSTANTS } from './core/constants/page-routes';
 import { UnauthGuard } from './core/guards/unauth.guard';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: PAGE_ROUTES_CONSTANTS.DASHBOARD,
+  //   pathMatch: 'full'
+  // },
   {
-    path: '',
-    redirectTo: PAGE_ROUTES_CONSTANTS.FEED,
-    pathMatch: 'full'
+    path: PAGE_ROUTES_CONSTANTS.DASHBOARD,
+    loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path: PAGE_ROUTES_CONSTANTS.FEED,
