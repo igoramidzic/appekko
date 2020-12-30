@@ -21,7 +21,7 @@ export class ScreenerComponent implements OnInit {
   constructor(private githubService: GithubService) {
     this.query = {
       topic: undefined,
-      language: ETechnologyLanguage.CPP,
+      language: ETechnologyLanguage.TYPESCRIPT,
       sort: {
         by: EGithubRepositorySortBy.STARS,
         order: EGithubQueryOrderDirection.DESCENDING
