@@ -1,0 +1,16 @@
+.flag {
+    display: inline;
+    padding: 4px;
+    border-radius: var(--border-radius);
+    font-size: 0.75rem;
+}
+
+.flag-primary {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.flag-secondary {
+    color: #fff;
+    background-color: var(--secondary-color);
+}

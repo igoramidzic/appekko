@@ -1,14 +1,12 @@
-<div class="card">
-    <div class="card-body p-4 pb-5">
-        <form (submit)="makeQuery()">
-            <div class="mb-4">
-                <label htmlFor="topic">Topic</label>
-                <input name="topic" autofocus type="text" class="input-lg" [(ngModel)]="query.topic" placeholder="cryptocurrency" />
-            </div>
-
-            <button tabindex="-1" type="button" *ngFor="let language of TechnologyLanguages" class="btn btn-sm mr-2 mb-2" [ngClass]="{ 'btn-secondary': languageIsSelected(language)}" (click)="selectLanguage(language)">{{language}}</button>
-
-            <button type="submit" class="search-button btn btn-primary btn-lg"><i class="mr-4 fas fa-search"></i> Search Repositories</button>
-        </form>
+<form (submit)="makeQuery()">
+    <div class="mb-4">
+        <label htmlFor="topic">Topic</label>
+        <input name="topic" autofocus type="text" class="input-lg" [(ngModel)]="query.topic" placeholder="cryptocurrency" />
     </div>
-</div>
+
+    <div class="mb-3">
+        <button tabindex="-1" type="button" *ngFor="let language of TechnologyLanguages" class="btn btn-sm mr-2 mb-2" [ngClass]="{ 'btn-secondary': languageIsSelected(language)}" (click)="selectLanguage(language)">{{language}}</button>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg"><i class="mr-4 fas fa-search"></i> Search Repositories</button>
+</form>

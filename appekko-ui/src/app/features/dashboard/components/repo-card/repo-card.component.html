@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="d-flex">
+        <div class="p-1">
+            <img class="avatar-img" [src]="repo.owner?.avatar_url" alt="">
+        </div>
+        <div class="p-1 d-flex flex-column">
+            <span class="hint">{{ repo.owner?.login }}</span>
+            <a [href]="repo.html_url" target="_blank">{{ repo.name }}</a>
+        </div>
+    </div>
+
+</div>

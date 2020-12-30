@@ -14,6 +14,7 @@ import { AddProjectModalComponent } from './project/add-project-modal/add-projec
 import { AddProjectFormComponent } from './forms/add-project-form/add-project-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ThousandSuffixesPipe } from '../core/pipes/thousand-suff.pipe';
 
 @NgModule({
     imports: [
@@ -24,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         MatDialogModule,
         FormsModule,
         ReactiveFormsModule,
+
     ],
     declarations: [
         GoogleAuthButtonComponent,
@@ -34,7 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         LoginFormComponent,
         RegisterFormComponent,
         AddProjectModalComponent,
-        AddProjectFormComponent
+        AddProjectFormComponent,
+        ThousandSuffixesPipe
     ],
     exports: [
         CommonModule,
@@ -48,6 +51,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         AddProjectFormComponent,
         FormsModule,
         ReactiveFormsModule,
+        ThousandSuffixesPipe
     ],
 })
 export class SharedModule { }

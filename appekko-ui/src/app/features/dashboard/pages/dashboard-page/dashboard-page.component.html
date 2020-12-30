@@ -1,15 +1,29 @@
-<div class="wrapper">
-    <div class="content-width container-fluid p-5">
-        <div class="header">
-            <h1>Search for a Project</h1>
-            <p>Find projects that interests you.</p>
-        </div>
+<div class="content-width container-fluid py-5">
+    <div class="row">
+        <div class="col-md-8">
+            <app-main-repo-display class="d-block mb-5" [repo]="repos[0]"></app-main-repo-display>
 
-        <div class="d-flex justify-content-center">
-            <div class="screener-wrapper">
-                <app-screener (repos)="onNewRepos($event)"></app-screener>
+            <p>Popular Projects</p>
+            <div class="row">
+                <div class="col-sm-4 mb-3" *ngFor="let repo of repos | slice:1:15">
+                    <app-repo-card [repo]="repo"></app-repo-card>
+                </div>
             </div>
         </div>
+
+        <div class="col-md-4">
+            <h3 class="mb-4">Search Repositories</h3>
+            <app-screener (repos)="onNewRepos($event)"></app-screener>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="content-width container-fluid p-5">
+    <h1>Search for a Project</h1>
+    <p>Find projects that interests you.</p>
+
+    <div class="d-flex justify-content-center">
+        <app-screener (repos)="onNewRepos($event)"></app-screener>
     </div>
 </div>
 
@@ -25,4 +39,4 @@
             <a [href]="repo.html_url" target="_blank" class="mb-0">{{ repo.html_url }}</a>
         </div>
     </div>
-</div>
+</div> -->
