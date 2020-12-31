@@ -15,10 +15,12 @@ export class ScreenerComponent implements OnInit {
 
   query: IGithubRepositoryQuery;
   TechnologyLanguages = TechnologyLanguages;
+  showLanguages: boolean;
 
   @Output() repos: EventEmitter<IGithubRepositoryResponce[]> = new EventEmitter();
 
   constructor(private githubService: GithubService) {
+    this.showLanguages = true;
     this.query = {
       topic: undefined,
       language: ETechnologyLanguage.TYPESCRIPT,
@@ -37,6 +39,7 @@ export class ScreenerComponent implements OnInit {
   }
 
   makeQuery(): void {
+    this.showLanguages = false;
     this.githubService.getRepositories(this.query).then(repos => { this.repos.emit(repos) })
       .catch(err => console.log(err));
   }
@@ -49,4 +52,5 @@ export class ScreenerComponent implements OnInit {
     console.log()
     return language == this.query.language;
   }
+
 }

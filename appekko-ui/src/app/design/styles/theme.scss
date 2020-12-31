@@ -2,6 +2,7 @@ $primary: #3f3d54;
 $secondary: #568e74;
 $success: #4eac79;
 $danger: #FB786F;
+$orage: #ffa162;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(("primary": $primary, "success": $success, "danger": $danger), $theme-colors);
@@ -15,6 +16,7 @@ $theme-colors: map-merge(("primary": $primary, "success": $success, "danger": $d
     --secondary-color: #568e74;
     --success-color: #4eac79;
     --danger-color: #FB786F;
+    --orange-color: #ffa162;
     --text-color: #3c3c3c;
     --link-color: #3264ff;
     --text-color-light: #b3b3b3;

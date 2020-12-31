@@ -1,19 +1,21 @@
 <div class="content-width container-fluid py-5">
     <div class="row">
-        <div class="col-md-8">
-            <app-main-repo-display class="d-block mb-5" [repo]="repos[0]"></app-main-repo-display>
-
-            <p>Popular Projects</p>
-            <div class="row">
-                <div class="col-sm-4 mb-3" *ngFor="let repo of repos | slice:1:15">
-                    <app-repo-card [repo]="repo"></app-repo-card>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
+        <div class="col-md-4 order-md-last mb-5">
             <h3 class="mb-4">Search Repositories</h3>
             <app-screener (repos)="onNewRepos($event)"></app-screener>
+        </div>
+
+        <div class="col-md-8">
+            <div *ngIf="repos">
+                <app-main-repo-display class="d-block mb-5" [repo]="repos[0]"></app-main-repo-display>
+
+                <p>Popular Projects</p>
+                <div class="row">
+                    <div class="col-sm-4 mb-3" *ngFor="let repo of repos | slice:1:15">
+                        <app-repo-card [repo]="repo"></app-repo-card>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

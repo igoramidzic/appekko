@@ -4,8 +4,13 @@
         <input name="topic" autofocus type="text" class="input-lg" [(ngModel)]="query.topic" placeholder="cryptocurrency" />
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3" *ngIf="showLanguages">
         <button tabindex="-1" type="button" *ngFor="let language of TechnologyLanguages" class="btn btn-sm mr-2 mb-2" [ngClass]="{ 'btn-secondary': languageIsSelected(language)}" (click)="selectLanguage(language)">{{language}}</button>
+    </div>
+
+    <div class="d-flex align-items-center mb-3" *ngIf="!showLanguages">
+        <span class="flag flag-secondary mr-3">{{ query.language }}</span>
+        <button type="button" class="link link-sm" (click)="showLanguages = true">Change Language</button>
     </div>
 
     <button type="submit" class="btn btn-primary btn-lg"><i class="mr-4 fas fa-search"></i> Search Repositories</button>
