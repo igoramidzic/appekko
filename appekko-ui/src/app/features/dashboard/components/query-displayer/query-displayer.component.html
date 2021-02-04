@@ -1,0 +1,7 @@
+<div>
+    <span class="hint-lg mr-2">Searched</span>
+    <span class="mr-2" *ngIf="query.topic">"{{ query.topic }}"</span>
+    <span class="mr-2" *ngIf="!query.topic">all repositories</span>
+    <span class="hint-lg mr-2">in</span>
+    <span class="flag flag-secondary">{{ query.language }}</span>
+</div>

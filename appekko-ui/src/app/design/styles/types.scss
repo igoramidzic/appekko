@@ -7,8 +7,17 @@ h6 {
     font-weight: 500;
 }
 
+.text-sm {
+    font-size: 0.85rem;
+}
+
 .hint {
-    font-size: 0.75em;
+    font-size: 0.75rem;
+    color: var(--hint-color);
+}
+
+.hint-lg {
+    font-size: 0.85rem;
     color: var(--hint-color);
 }
 

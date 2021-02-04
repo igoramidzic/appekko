@@ -1,17 +1,19 @@
 <div class="content-width container-fluid py-5">
     <div class="row">
-        <div class="col-md-4 order-md-last mb-5">
+        <div class="col-md-3 mb-5">
             <h3 class="mb-4">Search Repositories</h3>
-            <app-screener (repos)="onNewRepos($event)"></app-screener>
+            <app-screener (newQuery)="newQuery($event)" (repos)="onNewRepos($event)"></app-screener>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-lg-6">
             <div *ngIf="repos">
-                <app-main-repo-display class="d-block mb-5" [repo]="repos[0]"></app-main-repo-display>
+                <app-main-repo-display class="d-block mb-4" [repo]="repos[0]"></app-main-repo-display>
+
+                <app-query-displayer class="d-block mb-4" [query]="query"></app-query-displayer>
 
                 <p>Popular Projects</p>
                 <div class="row">
-                    <div class="col-sm-4 mb-3" *ngFor="let repo of repos | slice:1:15">
+                    <div class="col-sm-6 mb-3" *ngFor="let repo of repos | slice:1:7">
                         <app-repo-card [repo]="repo"></app-repo-card>
                     </div>
                 </div>
@@ -19,26 +21,3 @@
         </div>
     </div>
 </div>
-
-<!-- <div class="content-width container-fluid p-5">
-    <h1>Search for a Project</h1>
-    <p>Find projects that interests you.</p>
-
-    <div class="d-flex justify-content-center">
-        <app-screener (repos)="onNewRepos($event)"></app-screener>
-    </div>
-</div>
-
-<div class="spacer"></div>
-
-<div class="content-width container-fluid pt-5">
-    <div class="card mb-3" *ngFor="let repo of repos">
-        <div class="card-body">
-            <img [src]="repo.owner.avatar_url" alt="" style="height: 32px; width: 32px">
-            <h3 class="mb-0">{{ repo.name }}</h3>
-            <p class="mb-0">{{ repo.description }}</p>
-            <p class="mb-0">{{ repo.language }}</p>
-            <a [href]="repo.html_url" target="_blank" class="mb-0">{{ repo.html_url }}</a>
-        </div>
-    </div>
-</div> -->

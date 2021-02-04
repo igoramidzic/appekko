@@ -38,4 +38,8 @@ export class DashboardPageComponent implements OnInit {
   onNewRepos(repos: IGithubRepositoryResponce[]): void {
     this.repos = repos;
   }
+
+  newQuery(query: IGithubRepositoryQuery): void {
+    this.query = query;
+  }
 }

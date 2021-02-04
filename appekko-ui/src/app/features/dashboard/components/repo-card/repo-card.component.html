@@ -1,12 +1,19 @@
-<div class="card">
+<div class="card h-100">
     <div class="d-flex">
-        <div class="p-1">
-            <img class="avatar-img" [src]="repo.owner?.avatar_url" alt="">
+        <div class="p-2">
+            <a [href]="repo.owner?.html_url" target="_blank">
+                <img class="avatar-img" [src]="repo.owner?.avatar_url" alt="">
+            </a>
         </div>
-        <div class="p-1 d-flex flex-column">
-            <span class="hint">{{ repo.owner?.login }}</span>
-            <a [href]="repo.html_url" target="_blank">{{ repo.name }}</a>
+        <div class="pl-1 py-2 pr-2 flex-fill">
+            <div class="d-flex justify-content-between">
+                <a [href]="repo.owner?.html_url" target="_blank" class="hint-lg">{{repo.owner?.login}}</a>
+                <span class="hint flex-1"><i class="far fa-star"></i> {{ repo.stargazers_count | thousandSuff }}</span>
+            </div>
         </div>
     </div>
-
+    <div class="px-2 pb-2 d-flex flex-column">
+        <a class="mb-1" [href]="repo.html_url" target="_blank">{{ repo.name }}</a>
+        <p class="text-sm mb-0">{{ repo.description }}</p>
+    </div>
 </div>

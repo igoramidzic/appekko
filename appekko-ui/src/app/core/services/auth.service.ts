@@ -39,6 +39,7 @@ export class AuthService {
   private async getUserData(user: firebase.User | null): Promise<void> {
     if (!user) {
       this.user = null;
+      await this.afAuth.signInAnonymously();
       this.initialLoadCompleted = true;
     }
     else

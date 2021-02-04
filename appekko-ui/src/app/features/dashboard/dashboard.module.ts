@@ -8,6 +8,7 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import { ScreenerComponent } from './components/screener/screener.component';
 import { MainRepoDisplayComponent } from './components/main-repo-display/main-repo-display.component';
 import { RepoCardComponent } from './components/repo-card/repo-card.component';
+import { QueryDisplayerComponent } from './components/query-displayer/query-displayer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RepoCardComponent } from './components/repo-card/repo-card.component';
   DashboardPageComponent,
   ScreenerComponent,
   MainRepoDisplayComponent,
-  RepoCardComponent],
+  RepoCardComponent,
+  QueryDisplayerComponent],
   imports: [
     CommonModule,
     SharedModule,
