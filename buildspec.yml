@@ -4,14 +4,33 @@ phases:
   install:
     runtime-versions:
       nodejs: 12
+
+  pre-build:
+    commands:
+      - echo Entering pre-build stage
+      - echo Nothing to do in pre-build
+      - echo Exiting pre-build stage
   build:
     commands:
-      - echo Building API
-      - cd $CODEBUILD_SRC_DIR/api
-      - npm run build
-      - echo Building UI
-      - cd $CODEBUILD_SRC_DIR/appekko-ui
-      - npm run build --prod
-      - echo Starting the app
-      - cd $CODEBUILD_SRC_DIR/api
-      - npm start
+      - echo Entering build stage
+      - echo Nothing to do in build
+      - echo Exiting build stage
+      # - echo Building API
+      # - cd $CODEBUILD_SRC_DIR/api
+      # - npm run build
+      # - echo Building UI
+      # - cd $CODEBUILD_SRC_DIR/appekko-ui
+      # - npm run build --prod
+      # - echo Starting the app
+      # - cd $CODEBUILD_SRC_DIR/api
+      # - npm start
+  post-build:
+    commands:
+      - echo Entering post-build stage
+      - echo Nothing to do in post-build
+      - echo Exiting post-build stage
+artifacts:
+  files:
+    - dist/**/*
+    - package.json
+    - node_modules/**/*
