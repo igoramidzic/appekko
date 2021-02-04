@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+  build:
+    commands:
+      - echo Building API
+      - cd $CODEBUILD_SRC_DIR/api
+      - npm run build
+      - echo Building UI
+      - cd $CODEBUILD_SRC_DIR/appekko-ui
+      - npm run build --prod
+      - echo Starting the app
+      - cd $CODEBUILD_SRC_DIR/api
+      - npm start
