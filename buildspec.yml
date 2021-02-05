@@ -4,8 +4,8 @@ phases:
   install:
     runtime-versions:
       nodejs: 12
-      - npm install -g @angular/cli
-      - npm install -g typescript
+    commands:
+      - npm install -g @angular/cli typescript
 
   pre_build:
     commands:
