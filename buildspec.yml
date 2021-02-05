@@ -23,9 +23,6 @@ phases:
       - cd $CODEBUILD_SRC_DIR/appekko-ui
       - npm install
       - npm run build --prod
-      - echo Starting the app
-      - cd $CODEBUILD_SRC_DIR/api
-      - npm start
       - echo Exiting build stage
   post_build:
     commands:
