@@ -15,9 +15,9 @@ phases:
       - echo Entering build stage
       - echo Nothing to do in build
       - echo Exiting build stage
-      # - echo Building API
-      # - cd $CODEBUILD_SRC_DIR/api
-      # - npm run build
+      - echo Building API
+      - cd $CODEBUILD_SRC_DIR/api
+      - npm run build
       # - echo Building UI
       # - cd $CODEBUILD_SRC_DIR/appekko-ui
       # - npm run build --prod
