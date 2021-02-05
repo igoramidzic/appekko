@@ -4,6 +4,8 @@ phases:
   install:
     runtime-versions:
       nodejs: 12
+      - npm install -g @angular/cli
+      - npm install -g typescript
 
   pre_build:
     commands:
@@ -15,9 +17,9 @@ phases:
       - echo Entering build stage
       - echo Nothing to do in build
       - echo Exiting build stage
-      - echo Building API
-      - cd $CODEBUILD_SRC_DIR/api
-      - npm run build
+      # - echo Building API
+      # - cd $CODEBUILD_SRC_DIR/api
+      # - npm run build
       # - echo Building UI
       # - cd $CODEBUILD_SRC_DIR/appekko-ui
       # - npm run build --prod
