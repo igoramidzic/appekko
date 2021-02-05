@@ -5,6 +5,7 @@ phases:
     runtime-versions:
       nodejs: 12
     commands:
+      - npm install
       - npm install -g @angular/cli typescript
 
   pre_build:
@@ -15,8 +16,6 @@ phases:
   build:
     commands:
       - echo Entering build stage
-      - echo Nothing to do in build
-      - echo Exiting build stage
       - echo Building API
       - cd $CODEBUILD_SRC_DIR/api
       - npm run build
@@ -26,6 +25,7 @@ phases:
       # - echo Starting the app
       # - cd $CODEBUILD_SRC_DIR/api
       # - npm start
+      - echo Exiting build stage
   post_build:
     commands:
       - echo Entering post-build stage
